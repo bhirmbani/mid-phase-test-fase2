@@ -5,16 +5,16 @@ const food = require('../controllers/food');
 const isLogin = require('../helpers/auth');
 
 // create
-router.post('/create', food.create);
+router.post('/create', isLogin.auth, food.create);
 
 // get route
-router.get('/', food.getAll);
-router.get('/:name', food.findByName);
+router.get('/', isLogin.auth, food.getAll);
+router.get('/:name', isLogin.auth, food.findByName);
 
 // edit
-router.put('/:name', food.edit);
+router.put('/:name', isLogin.auth, food.edit);
 
 // delete
-router.delete('/:name', food.delete);
+router.delete('/:name', isLogin.auth, food.delete);
 
 module.exports = router;
