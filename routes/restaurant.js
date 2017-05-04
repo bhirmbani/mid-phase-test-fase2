@@ -5,16 +5,16 @@ const restaurant = require('../controllers/restaurant');
 const isLogin = require('../helpers/auth');
 
 // create
-router.post('/create', restaurant.create);
+router.post('/create', isLogin.auth, restaurant.create);
 
 // get route
-router.get('/', restaurant.getAll);
-router.get('/:name', restaurant.findByName);
+router.get('/', isLogin.auth, restaurant.getAll);
+router.get('/:name', isLogin.auth, restaurant.findByName);
 
 // edit
-router.put('/:name', restaurant.edit);
+router.put('/:name', isLogin.auth, restaurant.edit);
 
 // delete
-router.delete('/:name', restaurant.delete);
+router.delete('/:name', isLogin.auth, restaurant.delete);
 
 module.exports = router;
