@@ -7,7 +7,8 @@ const isLogin = require('../helpers/auth');
 // create
 router.post('/create', food.create);
 
-// get all
+// get route
 router.get('/', food.getAll);
+router.get('/:id', food.findByName);
 
 module.exports = router;

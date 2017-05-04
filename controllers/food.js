@@ -19,4 +19,18 @@ methods.getAll = (req, res, next) => {
   })
 }
 
+methods.findOne = function(req, res, next) {
+  Food.findById(req.params.id, function(err, data) {
+    if (err) {
+      res.send(err)
+    } else {
+      if (data) {
+        res.json(data)
+      } else {
+        res.send('err: no data')
+      }
+    }
+  })
+}
+
 module.exports = methods;

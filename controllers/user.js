@@ -22,4 +22,6 @@ methods.login = (req, res, next) => {
   res.send({'token': token});
 }
 
+
+
 module.exports = methods;
