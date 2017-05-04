@@ -19,8 +19,14 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/uts-fase2');
 
 // route
+const food = require('./routes/food');
+const restaurant = require('./routes/restaurant');
+const user = require('./routes/user');
 
 // use the route
+app.use('/api/users', user);
+app.use('/api/clothings', restaurant);
+app.use('/api/food', food);
 
 app.listen(app.get('port'), () => {
   console.log(`app listening on ${app.get('port')}`);
