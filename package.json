@@ -1,0 +1,29 @@
+{
+  "name": "mid-phase-test-fase2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhirmbani/mid-phase-test-fase2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhirmbani/mid-phase-test-fase2/issues"
+  },
+  "homepage": "https://github.com/bhirmbani/mid-phase-test-fase2#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "mongoose": "^4.9.7",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "password-hash": "^1.2.2"
+  }
+}
