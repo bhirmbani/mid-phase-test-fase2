@@ -34,7 +34,7 @@ methods.edit = (req, res, next) => {
 }
 
 methods.delete = (req, res, next) => {
-  Food.remove({ isbn: req.params.name }, (err, done) => {
+  Food.remove({ name: req.params.name }, (err, done) => {
     if (err) res.send(err)
     res.send(`food successfully deleted`);
   })
