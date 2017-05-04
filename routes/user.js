@@ -6,6 +6,6 @@ const isLogin = require('../helpers/auth');
 
 // signup & login
 router.post('/signup', user.signup);
-// router.post('/login', passport.authenticate('local', {session: false}), user.login);
+router.post('/login', passport.authenticate('local', {session: false}), user.login);
 
 module.exports = router;
