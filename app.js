@@ -48,7 +48,7 @@ passport.use(new Strategy(function(username, password, done) {
 // use the route
 app.use('/api/users', user);
 app.use('/api/clothings', restaurant);
-app.use('/api/food', food);
+app.use('/api/foods', food);
 
 app.listen(app.get('port'), () => {
   console.log(`app listening on ${app.get('port')}`);
