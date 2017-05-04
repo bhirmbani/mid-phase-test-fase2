@@ -22,9 +22,23 @@ Route | HTTP | Description
 ----- | ---- | -----------
 /api/users/signup| POST | Sign up with new user info
 /api/users/sigin| POST | Sign in while get an access token based on credentials
-/api/users | GET | Get all the users info
-/api/users/:id | GET | Get a single user info
-/api/users | POST | create a user
-/api/users/:id | DELETE | Delete a user
-/api/users/:id | PUT | Update a user with new info
 
+List of food routes:
+
+Route | HTTP | Description
+----- | ---- | -----------
+/api/foods/create | POST | Add new food to database
+/api/foods | GET | List all of foods data
+/api/foods/:name | GET | Get one food data based on its name
+/api/foods/:name | PUT | Edit one food data based on its name
+/api/foods/:name | DELETE | Delete one food
+
+List of restaurant routes:
+
+Route | HTTP | Description
+----- | ---- | -----------
+/api/restaurants/create | POST | Add new restaurant to database
+/api/restaurants | GET | List all of restaurants data
+/api/restaurants/:name | GET | Get one restaurant data based on its name
+/api/restaurants/:name | PUT | Edit one restaurant data based on its name
+/api/restaurants/:name | DELETE | Delete one restaurant
