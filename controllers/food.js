@@ -12,4 +12,11 @@ methods.create = (req, res, next) => {
   })
 }
 
+methods.getAll = (req, res, next) => {
+  Food.find({}, (err, foods) => {
+    if(err) res.send(err);
+    res.send(foods);
+  })
+}
+
 module.exports = methods;
