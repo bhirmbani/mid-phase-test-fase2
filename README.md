@@ -1,5 +1,5 @@
 # mid-phase-test-fase2
-A restaurang REST API with food REST API using express plus authentication using passport.js
+A restaurant REST API with food REST API using express plus authentication using passport.js
 
 ### Installation
 ```javascript
@@ -20,8 +20,12 @@ List of user routes:
 
 Route | HTTP | Description
 ----- | ---- | -----------
-/api/users/signup| POST | Sign up with new user info
-/api/users/sigin| POST | Sign in while get an access token based on credentials
+/api/users/signup | POST | Sign up with new user info
+/api/users/sigin | POST | Sign in while get an access token based on credentials
+/api/users/ | GET | get all users data
+/api/users/:username | GET | get a user data based on its username
+/api/users/:username | PUT | edit user data based on its username
+/api/users/:username | DELETE | delete user data
 
 List of food routes:
 
