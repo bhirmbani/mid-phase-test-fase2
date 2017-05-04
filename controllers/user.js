@@ -22,6 +22,32 @@ methods.login = (req, res, next) => {
   res.send({'token': token});
 }
 
+methods.getAll = (req, res, next) => {
+  User.find({}, (err, users) => {
+    if(err) res.send(err);
+    res.send(users);
+  })
+}
 
+methods.findByUsername = (req, res, next) => {
+  User.findOne({ username: req.params.username }, (err, user) => {
+    if(err) res.send(err);
+    res.send(user)
+  })
+}
+
+methods.edit = (req, res, next) => {
+  User.findOneAndUpdate({ username: req.params.username }, { $set: req.body }, (err, done) => {
+    if (err) res.send(err)
+    res.send(`user edited`);
+  })
+}
+
+methods.delete = (req, res, next) => {
+  User.remove({ username: req.params.username }, (err, done) => {
+    if (err) res.send(err)
+    res.send(`user successfully deleted`);
+  })
+}
 
 module.exports = methods;
