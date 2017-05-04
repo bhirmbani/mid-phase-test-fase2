@@ -19,17 +19,24 @@ methods.getAll = (req, res, next) => {
   })
 }
 
-methods.findOne = function(req, res, next) {
-  Food.findById(req.params.id, function(err, data) {
-    if (err) {
-      res.send(err)
-    } else {
-      if (data) {
-        res.json(data)
-      } else {
-        res.send('err: no data')
-      }
-    }
+methods.findByName = (req, res, next) => {
+  Food.findOne({ name: req.params.name }, (err, food) => {
+    if(err) res.send(err);
+    res.send(food)
+  })
+}
+
+methods.edit = (req, res, next) => {
+  Food.findOneAndUpdate({ name: req.params.name }, { $set: req.body }, (err, done) => {
+    if (err) res.send(err)
+    res.send(`food edited`);
+  })
+}
+
+methods.delete = (req, res, next) => {
+  Food.remove({ isbn: req.params.name }, (err, done) => {
+    if (err) res.send(err)
+    res.send(`food successfully deleted`);
   })
 }
 

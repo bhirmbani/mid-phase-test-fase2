@@ -9,6 +9,12 @@ router.post('/create', food.create);
 
 // get route
 router.get('/', food.getAll);
-router.get('/:id', food.findByName);
+router.get('/:name', food.findByName);
+
+// edit
+router.put('/:name', food.edit);
+
+// delete
+router.delete('/:name', food.delete);
 
 module.exports = router;
